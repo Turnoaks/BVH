@@ -1,165 +1,931 @@
 <!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<style>body{font-family:'Segoe UI',sans-serif;background:#f0f4f8;padding:20px;color:#333}.section{background:#fff;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 4px 10px rgba(0,0,0,0.05);border-top:5px solid #2e7d32}.section-title{font-size:18px;font-weight:bold;margin-bottom:15px}.grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(140px, 1fr));gap:12px}.date-link{text-decoration:none;color:inherit}.date-pill{background:#fff;padding:10px;border-radius:8px;text-align:center;font-size:13px;border:1px solid #dee2e6;transition:all 0.2s;cursor:pointer;display:block}.date-pill:hover{border-color:#2e7d32;background:#e8f5e9;transform:translateY(-2px);box-shadow:0 2px 5px rgba(0,0,0,0.1)}.all-day{border-top-color:#d32f2f}.five-hour{border-top-color:#ffca28}.morning{border-top-color:#ff9800}.afternoon{border-top-color:#2196f3}.evening{border-top-color:#9c27b0}</style></head><body>
+<style>
+body{font-family:'Segoe UI',sans-serif;background:#f0f4f8;padding:20px;color:#333}
+.section{background:#fff;border-radius:12px;padding:20px;margin-bottom:20px;box-shadow:0 4px 10px rgba(0,0,0,0.05);border-top:5px solid #2e7d32}
+.section-title{font-size:18px;font-weight:bold;margin-bottom:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));gap:12px}
+.date-link{text-decoration:none;color:inherit}
+.date-pill{padding:12px;border-radius:10px;text-align:center;font-size:14px;border:1px solid #dee2e6;transition:all 0.2s;cursor:pointer;display:block;background:#fff}
+.date-pill:hover{filter:brightness(0.95);transform:translateY(-3px);box-shadow:0 4px 8px rgba(0,0,0,0.1);z-index:10;position:relative}
+.day-name{display:block;font-size:11px;color:#888;margin-top:4px;font-weight:normal;text-transform:uppercase;letter-spacing:0.5px}
+.sat{border: 2px solid #333 !important; font-weight:bold}
+.sun{border: 2px dashed #666 !important}
+.all-day{border-top-color:#d32f2f} .all-day .date-pill{background:#fff5f5}
+.five-hour{border-top-color:#ffca28} .five-hour .date-pill{background:#fffdf0}
+.morning{border-top-color:#ff9800} .morning .date-pill{background:#fff9f0}
+.afternoon{border-top-color:#2196f3} .afternoon .date-pill{background:#f0f7ff}
+.evening{border-top-color:#9c27b0} .evening .date-pill{background:#fcf0ff}
+</style></head><body>
 <h2 style='text-align:center;color:#2e7d32;margin-bottom:5px;'>🎉 Party Slot & Availability Finder</h2>
-<p style='text-align:center;font-size:14px;color:#666;margin-bottom:25px;'>Click any date to open the Hallmaster Booking Request page for that day.</p>
+<p style='text-align:center;font-size:14px;color:#666;margin-bottom:25px;'>⭐ Saturdays are bordered in black. Sundays are dashed. Click to book!</p>
 <div class='section all-day'><div class='section-title'>✨ Entire Day Available (No Current Bookings)</div><div class='grid'>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-18' target='_blank' class='date-link'><div class='date-pill'><b>Sat 18 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-19' target='_blank' class='date-link'><div class='date-pill'><b>Sun 19 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-02' target='_blank' class='date-link'><div class='date-pill'><b>Sat 02 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-03' target='_blank' class='date-link'><div class='date-pill'><b>Sun 03 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-10' target='_blank' class='date-link'><div class='date-pill'><b>Sun 10 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-16' target='_blank' class='date-link'><div class='date-pill'><b>Sat 16 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-17' target='_blank' class='date-link'><div class='date-pill'><b>Sun 17 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-23' target='_blank' class='date-link'><div class='date-pill'><b>Sat 23 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-24' target='_blank' class='date-link'><div class='date-pill'><b>Sun 24 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-30' target='_blank' class='date-link'><div class='date-pill'><b>Sat 30 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-31' target='_blank' class='date-link'><div class='date-pill'><b>Sun 31 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-06' target='_blank' class='date-link'><div class='date-pill'><b>Sat 06 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-07' target='_blank' class='date-link'><div class='date-pill'><b>Sun 07 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-13' target='_blank' class='date-link'><div class='date-pill'><b>Sat 13 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-14' target='_blank' class='date-link'><div class='date-pill'><b>Sun 14 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-20' target='_blank' class='date-link'><div class='date-pill'><b>Sat 20 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-21' target='_blank' class='date-link'><div class='date-pill'><b>Sun 21 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-27' target='_blank' class='date-link'><div class='date-pill'><b>Sat 27 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-28' target='_blank' class='date-link'><div class='date-pill'><b>Sun 28 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-04' target='_blank' class='date-link'><div class='date-pill'><b>Sat 04 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-05' target='_blank' class='date-link'><div class='date-pill'><b>Sun 05 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-11' target='_blank' class='date-link'><div class='date-pill'><b>Sat 11 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-12' target='_blank' class='date-link'><div class='date-pill'><b>Sun 12 Jul</b></div></a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-18' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 18 Apr</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-19' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>19 Apr</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-02' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 02 May</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-03' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>03 May</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-10' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>10 May</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-16' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 16 May</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-17' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>17 May</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-23' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 23 May</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-24' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>24 May</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-30' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 30 May</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-31' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>31 May</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-06' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 06 Jun</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-07' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>07 Jun</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-13' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 13 Jun</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-14' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>14 Jun</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-20' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 20 Jun</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-21' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>21 Jun</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-27' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 27 Jun</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-28' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>28 Jun</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-04' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 04 Jul</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-05' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>05 Jul</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-11' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 11 Jul</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-12' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>12 Jul</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
 </div></div>
 <div class='section five-hour'><div class='section-title'>🎂 Large Party Slots (5+ Consecutive Hours Free)</div><div class='grid'>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-20' target='_blank' class='date-link'><div class='date-pill'><b>Mon 20 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-21' target='_blank' class='date-link'><div class='date-pill'><b>Tue 21 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-23' target='_blank' class='date-link'><div class='date-pill'><b>Thu 23 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-24' target='_blank' class='date-link'><div class='date-pill'><b>Fri 24 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-25' target='_blank' class='date-link'><div class='date-pill'><b>Sat 25 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-26' target='_blank' class='date-link'><div class='date-pill'><b>Sun 26 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-27' target='_blank' class='date-link'><div class='date-pill'><b>Mon 27 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-28' target='_blank' class='date-link'><div class='date-pill'><b>Tue 28 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-29' target='_blank' class='date-link'><div class='date-pill'><b>Wed 29 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-30' target='_blank' class='date-link'><div class='date-pill'><b>Thu 30 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-01' target='_blank' class='date-link'><div class='date-pill'><b>Fri 01 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-04' target='_blank' class='date-link'><div class='date-pill'><b>Mon 04 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-05' target='_blank' class='date-link'><div class='date-pill'><b>Tue 05 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-06' target='_blank' class='date-link'><div class='date-pill'><b>Wed 06 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-07' target='_blank' class='date-link'><div class='date-pill'><b>Thu 07 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-08' target='_blank' class='date-link'><div class='date-pill'><b>Fri 08 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-09' target='_blank' class='date-link'><div class='date-pill'><b>Sat 09 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-11' target='_blank' class='date-link'><div class='date-pill'><b>Mon 11 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-12' target='_blank' class='date-link'><div class='date-pill'><b>Tue 12 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-14' target='_blank' class='date-link'><div class='date-pill'><b>Thu 14 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-18' target='_blank' class='date-link'><div class='date-pill'><b>Mon 18 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-19' target='_blank' class='date-link'><div class='date-pill'><b>Tue 19 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-20' target='_blank' class='date-link'><div class='date-pill'><b>Wed 20 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-22' target='_blank' class='date-link'><div class='date-pill'><b>Fri 22 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-25' target='_blank' class='date-link'><div class='date-pill'><b>Mon 25 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-26' target='_blank' class='date-link'><div class='date-pill'><b>Tue 26 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-28' target='_blank' class='date-link'><div class='date-pill'><b>Thu 28 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-29' target='_blank' class='date-link'><div class='date-pill'><b>Fri 29 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-01' target='_blank' class='date-link'><div class='date-pill'><b>Mon 01 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-02' target='_blank' class='date-link'><div class='date-pill'><b>Tue 02 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-03' target='_blank' class='date-link'><div class='date-pill'><b>Wed 03 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-04' target='_blank' class='date-link'><div class='date-pill'><b>Thu 04 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-05' target='_blank' class='date-link'><div class='date-pill'><b>Fri 05 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-08' target='_blank' class='date-link'><div class='date-pill'><b>Mon 08 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-09' target='_blank' class='date-link'><div class='date-pill'><b>Tue 09 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-11' target='_blank' class='date-link'><div class='date-pill'><b>Thu 11 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-12' target='_blank' class='date-link'><div class='date-pill'><b>Fri 12 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-15' target='_blank' class='date-link'><div class='date-pill'><b>Mon 15 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-16' target='_blank' class='date-link'><div class='date-pill'><b>Tue 16 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-17' target='_blank' class='date-link'><div class='date-pill'><b>Wed 17 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-18' target='_blank' class='date-link'><div class='date-pill'><b>Thu 18 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-22' target='_blank' class='date-link'><div class='date-pill'><b>Mon 22 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-23' target='_blank' class='date-link'><div class='date-pill'><b>Tue 23 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-25' target='_blank' class='date-link'><div class='date-pill'><b>Thu 25 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-29' target='_blank' class='date-link'><div class='date-pill'><b>Mon 29 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-30' target='_blank' class='date-link'><div class='date-pill'><b>Tue 30 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-01' target='_blank' class='date-link'><div class='date-pill'><b>Wed 01 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-02' target='_blank' class='date-link'><div class='date-pill'><b>Thu 02 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-03' target='_blank' class='date-link'><div class='date-pill'><b>Fri 03 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-07' target='_blank' class='date-link'><div class='date-pill'><b>Tue 07 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-09' target='_blank' class='date-link'><div class='date-pill'><b>Thu 09 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-10' target='_blank' class='date-link'><div class='date-pill'><b>Fri 10 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-13' target='_blank' class='date-link'><div class='date-pill'><b>Mon 13 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-14' target='_blank' class='date-link'><div class='date-pill'><b>Tue 14 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-15' target='_blank' class='date-link'><div class='date-pill'><b>Wed 15 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-16' target='_blank' class='date-link'><div class='date-pill'><b>Thu 16 Jul</b></div></a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-20' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>20 Apr</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-21' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>21 Apr</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-23' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>23 Apr</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-24' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>24 Apr</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-25' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 25 Apr</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-26' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>26 Apr</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-27' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>27 Apr</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-28' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>28 Apr</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-29' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>29 Apr</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-30' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>30 Apr</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-01' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>01 May</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-04' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>04 May</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-05' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>05 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-06' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>06 May</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-07' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>07 May</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-08' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>08 May</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-09' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 09 May</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-11' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>11 May</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-12' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>12 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-14' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>14 May</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-18' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>18 May</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-19' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>19 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-20' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>20 May</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-22' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>22 May</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-25' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>25 May</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-26' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>26 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-28' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>28 May</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-29' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>29 May</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-01' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>01 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-02' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>02 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-03' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>03 Jun</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-04' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>04 Jun</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-05' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>05 Jun</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-08' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>08 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-09' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>09 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-11' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>11 Jun</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-12' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>12 Jun</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-15' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>15 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-16' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>16 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-17' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>17 Jun</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-18' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>18 Jun</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-22' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>22 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-23' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>23 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-25' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>25 Jun</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-29' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>29 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-30' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>30 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-01' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>01 Jul</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-02' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>02 Jul</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-03' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>03 Jul</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-07' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>07 Jul</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-09' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>09 Jul</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-10' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>10 Jul</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-13' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>13 Jul</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-14' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>14 Jul</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-15' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>15 Jul</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-16' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>16 Jul</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
 </div></div>
 <div class='section morning'><div class='section-title'>🌅 Mornings Free (8am - 12pm)</div><div class='grid'>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-28' target='_blank' class='date-link'><div class='date-pill'><b>Thu 28 May</b></div></a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-28' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>28 May</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
 </div></div>
 <div class='section afternoon'><div class='section-title'>☀️ Afternoons Free (12pm - 5pm)</div><div class='grid'>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-20' target='_blank' class='date-link'><div class='date-pill'><b>Mon 20 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-21' target='_blank' class='date-link'><div class='date-pill'><b>Tue 21 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-27' target='_blank' class='date-link'><div class='date-pill'><b>Mon 27 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-28' target='_blank' class='date-link'><div class='date-pill'><b>Tue 28 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-29' target='_blank' class='date-link'><div class='date-pill'><b>Wed 29 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-04' target='_blank' class='date-link'><div class='date-pill'><b>Mon 04 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-05' target='_blank' class='date-link'><div class='date-pill'><b>Tue 05 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-06' target='_blank' class='date-link'><div class='date-pill'><b>Wed 06 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-08' target='_blank' class='date-link'><div class='date-pill'><b>Fri 08 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-11' target='_blank' class='date-link'><div class='date-pill'><b>Mon 11 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-12' target='_blank' class='date-link'><div class='date-pill'><b>Tue 12 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-18' target='_blank' class='date-link'><div class='date-pill'><b>Mon 18 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-19' target='_blank' class='date-link'><div class='date-pill'><b>Tue 19 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-20' target='_blank' class='date-link'><div class='date-pill'><b>Wed 20 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-25' target='_blank' class='date-link'><div class='date-pill'><b>Mon 25 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-26' target='_blank' class='date-link'><div class='date-pill'><b>Tue 26 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-01' target='_blank' class='date-link'><div class='date-pill'><b>Mon 01 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-02' target='_blank' class='date-link'><div class='date-pill'><b>Tue 02 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-03' target='_blank' class='date-link'><div class='date-pill'><b>Wed 03 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-05' target='_blank' class='date-link'><div class='date-pill'><b>Fri 05 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-08' target='_blank' class='date-link'><div class='date-pill'><b>Mon 08 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-09' target='_blank' class='date-link'><div class='date-pill'><b>Tue 09 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-15' target='_blank' class='date-link'><div class='date-pill'><b>Mon 15 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-16' target='_blank' class='date-link'><div class='date-pill'><b>Tue 16 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-17' target='_blank' class='date-link'><div class='date-pill'><b>Wed 17 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-22' target='_blank' class='date-link'><div class='date-pill'><b>Mon 22 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-23' target='_blank' class='date-link'><div class='date-pill'><b>Tue 23 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-29' target='_blank' class='date-link'><div class='date-pill'><b>Mon 29 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-30' target='_blank' class='date-link'><div class='date-pill'><b>Tue 30 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-01' target='_blank' class='date-link'><div class='date-pill'><b>Wed 01 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-02' target='_blank' class='date-link'><div class='date-pill'><b>Thu 02 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-03' target='_blank' class='date-link'><div class='date-pill'><b>Fri 03 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-07' target='_blank' class='date-link'><div class='date-pill'><b>Tue 07 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-10' target='_blank' class='date-link'><div class='date-pill'><b>Fri 10 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-13' target='_blank' class='date-link'><div class='date-pill'><b>Mon 13 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-14' target='_blank' class='date-link'><div class='date-pill'><b>Tue 14 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-15' target='_blank' class='date-link'><div class='date-pill'><b>Wed 15 Jul</b></div></a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-20' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>20 Apr</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-21' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>21 Apr</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-27' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>27 Apr</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-28' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>28 Apr</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-29' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>29 Apr</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-04' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>04 May</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-05' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>05 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-06' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>06 May</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-08' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>08 May</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-11' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>11 May</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-12' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>12 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-18' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>18 May</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-19' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>19 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-20' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>20 May</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-25' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>25 May</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-26' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>26 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-01' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>01 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-02' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>02 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-03' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>03 Jun</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-05' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>05 Jun</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-08' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>08 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-09' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>09 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-15' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>15 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-16' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>16 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-17' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>17 Jun</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-22' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>22 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-23' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>23 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-29' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>29 Jun</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-30' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>30 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-01' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>01 Jul</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-02' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>02 Jul</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-03' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>03 Jul</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-07' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>07 Jul</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-10' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>10 Jul</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-13' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>13 Jul</b>
+    <span class='day-name'>Monday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-14' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>14 Jul</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-15' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>15 Jul</b>
+    <span class='day-name'>Wednesday</span>
+  </div>
+</a>
 </div></div>
 <div class='section evening'><div class='section-title'>🌙 Evenings Free (5pm - 10pm)</div><div class='grid'>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-23' target='_blank' class='date-link'><div class='date-pill'><b>Thu 23 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-24' target='_blank' class='date-link'><div class='date-pill'><b>Fri 24 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-25' target='_blank' class='date-link'><div class='date-pill'><b>Sat 25 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-26' target='_blank' class='date-link'><div class='date-pill'><b>Sun 26 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-28' target='_blank' class='date-link'><div class='date-pill'><b>Tue 28 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-30' target='_blank' class='date-link'><div class='date-pill'><b>Thu 30 Apr</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-01' target='_blank' class='date-link'><div class='date-pill'><b>Fri 01 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-05' target='_blank' class='date-link'><div class='date-pill'><b>Tue 05 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-07' target='_blank' class='date-link'><div class='date-pill'><b>Thu 07 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-08' target='_blank' class='date-link'><div class='date-pill'><b>Fri 08 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-09' target='_blank' class='date-link'><div class='date-pill'><b>Sat 09 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-14' target='_blank' class='date-link'><div class='date-pill'><b>Thu 14 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-22' target='_blank' class='date-link'><div class='date-pill'><b>Fri 22 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-26' target='_blank' class='date-link'><div class='date-pill'><b>Tue 26 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-28' target='_blank' class='date-link'><div class='date-pill'><b>Thu 28 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-29' target='_blank' class='date-link'><div class='date-pill'><b>Fri 29 May</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-02' target='_blank' class='date-link'><div class='date-pill'><b>Tue 02 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-04' target='_blank' class='date-link'><div class='date-pill'><b>Thu 04 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-05' target='_blank' class='date-link'><div class='date-pill'><b>Fri 05 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-09' target='_blank' class='date-link'><div class='date-pill'><b>Tue 09 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-11' target='_blank' class='date-link'><div class='date-pill'><b>Thu 11 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-12' target='_blank' class='date-link'><div class='date-pill'><b>Fri 12 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-18' target='_blank' class='date-link'><div class='date-pill'><b>Thu 18 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-23' target='_blank' class='date-link'><div class='date-pill'><b>Tue 23 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-25' target='_blank' class='date-link'><div class='date-pill'><b>Thu 25 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-30' target='_blank' class='date-link'><div class='date-pill'><b>Tue 30 Jun</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-02' target='_blank' class='date-link'><div class='date-pill'><b>Thu 02 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-03' target='_blank' class='date-link'><div class='date-pill'><b>Fri 03 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-07' target='_blank' class='date-link'><div class='date-pill'><b>Tue 07 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-09' target='_blank' class='date-link'><div class='date-pill'><b>Thu 09 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-10' target='_blank' class='date-link'><div class='date-pill'><b>Fri 10 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-14' target='_blank' class='date-link'><div class='date-pill'><b>Tue 14 Jul</b></div></a>
-<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-16' target='_blank' class='date-link'><div class='date-pill'><b>Thu 16 Jul</b></div></a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-23' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>23 Apr</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-24' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>24 Apr</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-25' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 25 Apr</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-26' target='_blank' class='date-link'>
+  <div class='date-pill sun'>
+    <b>26 Apr</b>
+    <span class='day-name'>Sunday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-28' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>28 Apr</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-04-30' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>30 Apr</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-01' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>01 May</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-05' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>05 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-07' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>07 May</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-08' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>08 May</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-09' target='_blank' class='date-link'>
+  <div class='date-pill sat'>
+    <b>⭐ 09 May</b>
+    <span class='day-name'>Saturday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-14' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>14 May</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-22' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>22 May</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-26' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>26 May</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-28' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>28 May</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-05-29' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>29 May</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-02' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>02 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-04' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>04 Jun</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-05' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>05 Jun</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-09' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>09 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-11' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>11 Jun</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-12' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>12 Jun</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-18' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>18 Jun</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-23' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>23 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-25' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>25 Jun</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-06-30' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>30 Jun</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-02' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>02 Jul</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-03' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>03 Jul</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-07' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>07 Jul</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-09' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>09 Jul</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-10' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>10 Jul</b>
+    <span class='day-name'>Friday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-14' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>14 Jul</b>
+    <span class='day-name'>Tuesday</span>
+  </div>
+</a>
+<a href='https://v2.hallmaster.co.uk/Scheduler/View/12292?date=2026-07-16' target='_blank' class='date-link'>
+  <div class='date-pill '>
+    <b>16 Jul</b>
+    <span class='day-name'>Thursday</span>
+  </div>
+</a>
 </div></div>
 </body></html>
